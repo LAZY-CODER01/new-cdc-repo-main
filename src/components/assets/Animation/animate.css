@@ -1,0 +1,102 @@
+.js {
+    width: auto;
+    height: 30%;
+}
+
+.cpp {
+    width: auto;
+    left: 75%;
+    height: 25%;
+    top: 8%;
+}
+
+
+.js {
+    position: fixed;
+    z-index: 1;
+    left: 5%;
+    width: auto;
+    height:25%;
+}
+
+.cpp {
+    position: fixed;
+    z-index: 7;
+}
+.c{
+    position: fixed;
+    z-index: 2;
+    width: auto;
+    height: 30%;
+    left: 70%;
+    top: 60%;
+
+}
+.python {
+    width: auto;
+    height: 45%;
+    position: fixed;
+    z-index: 6;
+    left: 15%;
+    top: -20%;
+}
+.vscode{
+    top: 70%;
+    left: 5%;
+    width: auto;
+    height: 35%;
+}
+.java {
+    width: auto;
+    height: 50%;
+    position: fixed;
+    z-index: 6;
+    left: 20%;
+    top: 70%;
+}
+.conti{
+    height: 200vh;
+}
+
+@media (max-width: 440px) {
+    .js {
+        width: auto;
+        height: 15%;
+    }
+    .conti{
+    height: 100vh;
+}
+
+    .cpp {
+        width: auto;
+        height: 20%;
+        top: 30%;
+        left: 110%;
+        z-index: 8;
+    }
+    .c{
+        height: 20%;
+        left: 70%;
+    }
+
+    .python {
+        width: auto;
+        height: 30%;
+        left: 10%;
+    }
+    .vscode{
+        left: -1;
+        height: 20%;
+    }
+
+    .java {
+        width: auto;
+        height: 30%;
+        top: 50%;
+        left: -10%;
+    }
+}
+
+    
+    
+  

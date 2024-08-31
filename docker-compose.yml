@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    image: node:alpine
+    command: sh -c "yarn install && yarn start"
+    ports:
+      - 127.0.0.1:3000:3000
+    working_dir: /app
+    volumes:
+      - cdc-app-sync:/app:nocopy
+volumes:
+  cdc-app-sync:
+    external: true

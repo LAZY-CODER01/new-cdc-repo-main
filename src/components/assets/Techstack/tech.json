@@ -1,0 +1,57 @@
+[
+  
+    {
+        "name": "C",
+        "image": "img/techstack/c.png"
+    },
+    {
+        "name": "C++",
+        "image": "img/techstack/c++.png"
+    },
+    {
+        "name": "Python",
+        "image": "img/techstack/python.png"
+    },
+    {
+        "name": "Java",
+        "image": "img/techstack/java.png"
+    },
+    {
+        "name": "HTML",
+        "image": "img/techstack/html.png"
+    },
+    {
+        "name": "CSS",
+        "image": "img/techstack/css.png"
+    },
+    {
+        "name": "JavaScript",
+        "image": "img/techstack/Js.png"
+    },
+
+    {
+        "name": "React.js",
+        "image": "img/techstack/react.png"
+    },
+   
+    {
+        "name": "Node.js",
+        "image": "img/techstack/Nodejs.png"
+    },
+    {
+        "name": "MongoDB",
+        "image": "img/techstack/mongodb.png"
+    },
+    {
+        "name": "NextJs",
+        "image": "img/techstack/nextjs.png"
+    },
+    {
+        "name": "Git",
+        "image": "img/techstack/git.png"
+    },
+    {
+        "name": "VS Code",
+        "image": "img/techstack/vscode.png"
+    }
+]

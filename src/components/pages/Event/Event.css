@@ -1,0 +1,229 @@
+.chart-container {
+  margin-top: 15px; /* Add some margin for spacing */
+  height: 200px; /* Set a fixed height for the chart */
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.timeline h1 {
+  text-align: center;
+  margin: auto;
+}
+
+.textheading {
+  display: flex;
+  justify-content: center;
+}
+
+.textheading p {
+  font-size: 2rem;
+}
+
+.roadmap_main {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  color: rgb(34, 34, 34);
+  animation: movedown 1s linear forwards;
+  opacity: 0;
+}
+
+@keyframes movedown {
+  0% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.text-box {
+  padding: 20px;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: max-height 0.3s ease; /* Smooth transition */
+  overflow: hidden; /* Prevent overflow */
+  max-height: 200px; /* Initial max height */
+}
+
+.text-box.expanded {
+  max-height: 500px; /* Increased height when expanded */
+}
+
+.left-roadmap {
+  left: 0;
+}
+
+.right-roadmap {
+  left: 50%;
+}
+
+.img {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  right: -20px;
+  top: 32px;
+  z-index: 10;
+  background: #fff;
+  padding: 3px;
+}
+
+.right-roadmap .img {
+  left: -20px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  animation: moveline 6s forwards;
+}
+
+@keyframes moveline {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.text-box small {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.text-box p {
+  word-spacing: 2px;
+  line-height: 20px;
+}
+
+.left-roadmap-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #fff;
+  right: -15px;
+}
+
+.right-roadmap-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #fff;
+  left: -15px;
+}
+
+.roadmap_main:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.roadmap_main:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.roadmap_main:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.roadmap_main:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.text-box:hover {
+  border: none;
+}
+
+.text-box h2 {
+  cursor: pointer;
+}
+
+/* New Styles for Expanded Details */
+.expanded-details {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Align items to the sides */
+  margin-top: 20px; /* Add some spacing above the details */
+}
+
+.pie-chart-container {
+  flex: 1; /* Allow the chart container to take available space */
+  text-align: right; /* Align chart to the right */
+  max-width: 100%; /* Ensure it doesn't exceed container width */
+  padding: 0 10px; /* Add padding for spacing */
+  display: flex; /* Use flexbox to align items */
+  justify-content: center; /* Center chart on smaller screens */
+}
+
+.additional-info {
+  flex: 0 0 200px; /* Fixed width for the additional info */
+  text-align: left; /* Align legend to the left */
+}
+
+@media screen and (max-width: 600px) {
+  .timeline {
+    margin: 50px auto;
+  }
+
+  .timeline::after {
+    left: 31px;
+  }
+
+  .roadmap_main {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+
+  .text-box {
+    font-size: 13px;
+  }
+
+  .text-box small {
+    margin-bottom: 10px;
+  }
+
+  .right-roadmap {
+    left: 0%;
+  }
+
+  .left-roadmap {
+    left: 0%;
+  }
+
+  .expanded-details {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  }
+
+  .pie-chart-container {
+    justify-content: center; /* Center the pie chart */
+    margin: 0; /* Reset margin */
+  }
+
+  .additional-info {
+    flex: 1; /* Allow the info to take full width */
+    text-align: center; /* Center text on small screens */
+  }
+}
