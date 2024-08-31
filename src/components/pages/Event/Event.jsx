@@ -8,7 +8,7 @@ const Event = () => {
     {
       title: "Syntax Seige '24",
       date: "Mar 2024",
-      description: "hello this is abhishek",
+      description: "The Code-Cascade event unfolds over three days, offering online coding basic classes tailored for junior participants. This immersive experience provides young learners with a solid foundation in programming fundamentals.",
       participants: 100,
       signups: 50,
     },
@@ -24,7 +24,7 @@ const Event = () => {
       title: "Game Of Codes",
       date: "Upcoming event",
       description:
-        "Game of Codes is hosted by Coders & Developers Club and Computer Engineering Society. This online event is tailored just for second-year students.",
+        "Game of Codes is hosted by CodeChef MMMUT Chapter and Computer Engineering Society. This online event is tailored just for second-year students.",
       participants: 120,
       signups: 90,
     },
@@ -46,16 +46,17 @@ const Event = () => {
     },
   ];
 
-  // State to track which event is expanded
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   const toggleExpand = (index) => {
-    // Toggle the expanded state of the clicked event
-    if (expandedIndex === index) {
-      setExpandedIndex(null);
-    } else {
-      setExpandedIndex(index);
-    }
+    setExpandedIndex(index);
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    setExpandedIndex(null);
   };
 
   return (
@@ -74,29 +75,17 @@ const Event = () => {
               transition: "transform 0.3s",
               transform: expandedIndex === index ? "scale(1.05)" : "scale(1)",
             }}
-            onClick={() => toggleExpand(index)} // Toggle expansion on click
           >
-            {/* {index % 2 === 0 ? (
-              <DiAndroid className="img" />
-            ) : (
-              <DiCodeigniter className="img" />
-            )} */}
-            <div className={`text-box ${expandedIndex === index ? "expanded" : ""}`}>
+            <div className="text-box">
               <h2>{event.title}</h2>
               <small>{event.date}</small>
               <p>{event.description}</p>
-              {expandedIndex === index && ( // Show details only if expanded
-                <div className="expanded-details">
-                  <div className="pie-chart-container" style={{ marginTop: "20px" }}>
-                    <PieChart data={{ participants: event.participants, signups: event.signups }} />
-                  </div>
-                  <div className="additional-info">
-                    <p>Participants: {event.participants}</p>
-                    <p>Signups: {event.signups}</p>
-                    {/* You can add more details here as needed */}
-                  </div>
-                </div>
-              )}
+              <button
+                className="show-more-btn"
+                onClick={() => toggleExpand(index)}
+              >
+                Show More
+              </button>
             </div>
             <span
               className={`${index % 2 === 0
@@ -107,6 +96,33 @@ const Event = () => {
           </div>
         ))}
       </div>
+
+      {showPopup && expandedIndex !== null && (
+        <div className="popup-overlay" onClick={closePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <h2>{eventData[expandedIndex].title}</h2>
+            <small>{eventData[expandedIndex].date}</small>
+            <p>{eventData[expandedIndex].description}</p>
+            <div className="expanded-details">
+              <div className="pie-chart-container">
+                <PieChart
+                  data={{
+                    participants: eventData[expandedIndex].participants,
+                    signups: eventData[expandedIndex].signups,
+                  }}
+                />
+              </div>
+              <div className="additional-info">
+                <p>Participants: {eventData[expandedIndex].participants}</p>
+                <p>Signups: {eventData[expandedIndex].signups}</p>
+              </div>
+            </div>
+            <button className="close-btn" onClick={closePopup}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
