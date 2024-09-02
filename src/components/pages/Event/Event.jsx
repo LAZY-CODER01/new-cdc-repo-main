@@ -125,7 +125,7 @@ const Event = () => {
             <h2>Syntax Siege</h2>
             <small>7th - 15th March 2023</small>
             <p>
-            It is crucial to expose students to the realities of competitive programming to motivate and prepare them for the challenges ahead. To this end, the CDC organized “SYNTAX-SIEGE,” a week-long program designed to immerse first-year students in the concepts of Competitive Programming (CP) and Data Structures and Algorithms (DSA).
+            It is crucial to expose students to the realities of competitive programming to motivate and prepare them for the challenges ahead. To this end, the CDC organized “SYNTAX-SIEGE,” a week-long program designed to immerse first-year students in the concepts of Competitive Programming (CP)
             </p>
             <button className="show-more-btn" onClick={() => toggleExpand(4)}>
               Show More
